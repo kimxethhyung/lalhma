@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--font-color);
+}
+@font-face {
+    font-family: 'main font';
+    src: url(../font/Montserrat/Montserrat-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'second font';
+    src: url(../font/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+:root{
+    --main-color: #3a303036;
+    --secondary-color: #e0dedea5;
+    --font-color: #3b1414bc;
+    --bg-color: #607d8be1;
+    --third-color: #fff;
+    --last-color: rgba(164, 161, 161, 0.719);
+
+}   
+
+body{
+    background: #67808d84;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(180deg,rgba(0, 0, 0, 0.10),rgba(0, 0, 0, 0.865)), url(../img/guillaume-marques-bnMPFPuSCI0-unsplash.jpg);
+    background-size: cover;
+    background-position: 100%;
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px 10px var(--bg-color);
+    padding: 0 20px 0 20px;
+    
+}
+.logo{
+    width: 60px;
+    border-radius: 30px;
+    border: 3px solid var(--bg-color);
+    transition: .8s;
+}
+.logo:hover{
+    transform: rotate(360deg);
+}
+.nav-items a {
+    background-color: var(--bg-color);
+    color: var(--third-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: .3s;
+}
+.nav-items a:hover{
+    background: var(--main-color);
+}
+.banner{
+    width: 50%;
+    height: auto;
+    background: #ffffff9b;
+    padding:30px;
+    margin-left: 50px;
+    margin-top: 70px;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+}
+.banner h3{
+ font-size: 1.15rem;
+ font-family: 'main font';
+}
+.banner h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.banner h2{
+    font-size: 1.5rem;
+    font-family: 'main font';
+}
+.btn{
+    background: var(--bg-color);
+    padding: 10px;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: .4s;
+}
+.btn{
+    transform: scale(1.1);
+}
+#bars {
+    cursor: pointer;
+    padding: 5px 8px;
+    display: none;
+    background: var(--bg-color);
+    border-radius: 4px;
+}
+
+/* about me section */
+section{
+    padding: 80px 40px;
+    /* background-color: #607d8b79; */
+    
+}
+
+section h1,
+section h3 {
+    text-align: center;
+}
+section h3{
+    font-size: 2rem;
+    font-style: italic;
+}
+
+section h1{
+    font-size: 3.2rem;
+    font-style: bold;
+    border-bottom: 2px solid var(--font-color);
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.about-section{
+    display: flex;
+}
+.about-img{
+    width: 40%;
+    height: 350px;
+}
+
+.about-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+.about-info{
+    width: 60%;
+    height: 350px;
+    padding: 0 30px;
+}
+
+.about-card-group{
+    width: 100%;
+    display: flex;
+}
+
+.about-card{
+    width: 100%;
+    padding-right: 30px;
+}
+
+.about-info h4{
+    margin-bottom: 10px;
+    font-size: 1.35rem;
+}
+
+.about-card img {
+    width: 230px;
+    height: 150px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* member card section */
+
+.member-card-selection{
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.member-card{
+    flex: 1 1 20rem;
+    height: 300px;
+    border: 1px solid lightgray;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-img,.member-text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.member-img{
+    object-fit: cover;
+    
+}
+
+.member-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(148, 148, 148, 0.308);
+    backdrop-filter: blur(2px);
+    /* transform: scale(0); */
+    transition: .3s;
+    transform: translateY(-100%);
+    /* transform-origin: top right; */
+    
+}
+
+.member-card:hover .member-text{
+    /* transform: scale(1); */
+    transform: translate(0);
+   
+}
+
+
+/*
+*************************************************************************************************************************** Media-query******************************************************************************************************************************************************************************************************************************************************/
+@media (max-width:650px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    nav {
+        padding: 0 40px;
+    }
+
+    #bars {
+        display: block;
+    }
+    
+    .nav-items{
+        position: absolute;
+        padding: 20px 100px;
+        background: var(--last-color);
+        top: 90px;
+        left: 0;
+        right: 0;
+        z-index: 80;
+        backdrop-filter: blur(5px);
+        /* display: none; */
+        transform: translate(100%);
+        transition: .4s;
+    }
+
+    .nav-items a {
+         display: block;
+         text-align: center;
+         margin-bottom: 10px;
+    }
+
+    .banner{
+        width: 80%;
+        margin-left: 20px;
+        margin-top: 50px;
+    }
+
+    .show{
+        /* display: block; */
+        transform: translate(0%);
+    }
+    
+    .about-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-img{
+        width: auto;
+    }
+
+    .about-info {
+        width: 100%;
+        height: 350px;
+        padding: 0;
+    }
+
+    .about-card img {
+        width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+
+}
